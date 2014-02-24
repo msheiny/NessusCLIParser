@@ -1,0 +1,29 @@
+<ReportItem port="3389" svc_name="msrdp" protocol="tcp" severity="2" pluginID="18405" pluginName="Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness" pluginFamily="Windows">
+	<bid>13818</bid>
+	<cve>CVE-2005-1794</cve>
+	<cvss_base_score>5.1</cvss_base_score>
+	<cvss_temporal_score>4.6</cvss_temporal_score>
+	<cvss_temporal_vector>CVSS2#E:F/RL:W/RC:ND</cvss_temporal_vector>
+	<cvss_vector>CVSS2#AV:N/AC:H/Au:N/C:P/I:P/A:P</cvss_vector>
+	<description>The remote version of the Remote Desktop Protocol Server (Terminal Service) is vulnerable to a man-in-the-middle (MiTM) attack. The RDP client makes no effort to validate the identity of the server when setting up encryption. An attacker with the ability to intercept traffic from the RDP server can establish encryption with the client and server without being detected. A MiTM attack of this nature would allow the attacker to obtain any sensitive information transmitted, including authentication credentials.
+
+		This flaw exists because the RDP server stores a hardcoded RSA private key in the mstlsapi.dll library. Any local user with access to this file (on any Windows system) can retrieve the key and use it for this attack.</description>
+	<exploit_available>true</exploit_available>
+	<exploitability_ease>Exploits are available</exploitability_ease>
+	<fname>tssvc_mim.nasl</fname>
+	<osvdb>17131</osvdb>
+	<plugin_modification_date>2013/08/05</plugin_modification_date>
+	<plugin_name>Microsoft Windows Remote Desktop Protocol Server Man-in-the-Middle Weakness</plugin_name>
+	<plugin_publication_date>2005/06/01</plugin_publication_date>
+	<plugin_type>remote</plugin_type>
+	<risk_factor>Medium</risk_factor>
+	<script_version>$Revision: 1.26 $</script_version>
+	<see_also>http://www.oxid.it/downloads/rdp-gbu.pdf
+		http://www.nessus.org/u?e2628096
+		http://technet.microsoft.com/en-us/library/cc782610.aspx</see_also>
+	<solution>- Force the use of SSL as a transport layer for this service if supported, or/and
+		- Select the &apos;Allow connections only from computers running Remote Desktop with Network Level Authentication&apos; setting if it is available.</solution>
+	<synopsis>It may be possible to get access to the remote host.</synopsis>
+	<vuln_publication_date>2005/05/28</vuln_publication_date>
+	<xref>OSVDB:17131</xref>
+</ReportItem>

@@ -1,0 +1,28 @@
+<ReportItem port="513" svc_name="rlogin" protocol="tcp" severity="3" pluginID="10205" pluginName="rlogin Service Detection" pluginFamily="Service detection">
+	<cve>CVE-1999-0651</cve>
+	<cvss_base_score>7.5</cvss_base_score>
+	<cvss_vector>CVSS2#AV:N/AC:L/Au:N/C:P/I:P/A:P</cvss_vector>
+	<description>The remote host is running the &apos;rlogin&apos; service.  This service is dangerous in the sense that it is not ciphered - that is, everyone can sniff the data that passes between the rlogin client and the rloginserver. This includes logins and passwords.
+
+		Also, it may allow poorly authenticated logins without passwords. If the host is vulnerable to TCP sequence number guessing (from any network) or IP spoofing (including ARP hijacking on a local network) then it may be possible to bypass authentication.
+
+		Finally, rlogin is an easy way to turn file-write access into full logins through the .rhosts or rhosts.equiv files. 
+
+		You should disable this service and use ssh instead.</description>
+	<exploit_available>true</exploit_available>
+	<exploit_framework_metasploit>true</exploit_framework_metasploit>
+	<exploitability_ease>Exploits are available</exploitability_ease>
+	<fname>rlogin.nasl</fname>
+	<metasploit_name>rlogin Authentication Scanner</metasploit_name>
+	<osvdb>193</osvdb>
+	<plugin_modification_date>2012/08/15</plugin_modification_date>
+	<plugin_name>rlogin Service Detection</plugin_name>
+	<plugin_publication_date>1999/08/30</plugin_publication_date>
+	<plugin_type>remote</plugin_type>
+	<risk_factor>High</risk_factor>
+	<script_version>$Revision: 1.30 $</script_version>
+	<solution>Comment out the &apos;login&apos; line in /etc/inetd.conf</solution>
+	<synopsis>The rlogin service is listening on the remote port.</synopsis>
+	<vuln_publication_date>1990/01/01</vuln_publication_date>
+	<xref>OSVDB:193</xref>
+</ReportItem>

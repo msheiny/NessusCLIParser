@@ -1,0 +1,44 @@
+<ReportItem port="3389" svc_name="msrdp" protocol="tcp" severity="1" pluginID="30218" pluginName="Terminal Services Encryption Level is not FIPS-140 Compliant" pluginFamily="Misc.">
+	<cvss_base_score>2.6</cvss_base_score>
+	<cvss_vector>CVSS2#AV:N/AC:H/Au:N/C:P/I:N/A:N</cvss_vector>
+	<description>The encryption setting used by the remote Terminal Services service is not FIPS-140 compliant.</description>
+	<fname>fips_rdp.nbin</fname>
+	<plugin_modification_date>2013/08/05</plugin_modification_date>
+	<plugin_name>Terminal Services Encryption Level is not FIPS-140 Compliant</plugin_name>
+	<plugin_publication_date>2008/02/11</plugin_publication_date>
+	<plugin_type>remote</plugin_type>
+	<risk_factor>Low</risk_factor>
+	<script_version>$Revision: 1.12 $</script_version>
+	<solution>Change RDP encryption level to :
+
+		 4. FIPS Compliant</solution>
+	 <synopsis>The remote host is not FIPS-140 compliant.</synopsis>
+	 <plugin_output>
+		 The terminal services encryption level is set to :
+
+		 2. Medium (Client Compatible)</plugin_output>
+ </ReportItem>
+ <ReportItem port="3389" svc_name="msrdp" protocol="tcp" severity="2" pluginID="57690" pluginName="Terminal Services Encryption Level is Medium or Low" pluginFamily="Misc.">
+	 <cvss_base_score>4.3</cvss_base_score>
+	 <cvss_vector>CVSS2#AV:N/AC:M/Au:N/C:P/I:N/A:N</cvss_vector>
+	 <description>The remote Terminal Services service is not configured to use strong cryptography. 
+
+		 Using weak cryptography with this service may allow an attacker to eavesdrop on the communications more easily and obtain screenshots and/or keystrokes.</description>
+	 <fname>rdp_weak_crypto.nbin</fname>
+	 <plugin_modification_date>2013/08/05</plugin_modification_date>
+	 <plugin_name>Terminal Services Encryption Level is Medium or Low</plugin_name>
+	 <plugin_publication_date>2012/01/25</plugin_publication_date>
+	 <plugin_type>remote</plugin_type>
+	 <risk_factor>Medium</risk_factor>
+	 <script_version>$Revision: 1.9 $</script_version>
+	 <solution>Change RDP encryption level to one of :
+
+		  3. High
+
+		   4. FIPS Compliant</solution>
+	   <synopsis>The remote host is using weak cryptography.</synopsis>
+	   <plugin_output>
+		   The terminal services encryption level is set to :
+
+		   2. Medium</plugin_output>
+</ReportItem>
